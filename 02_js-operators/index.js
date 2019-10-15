@@ -9,83 +9,83 @@
 // // 
 
 // -----------------------------------------------------------------------
-// // 02 Arithmatic Operators
+// Operators
+// // 01 If...else
 
-// let x = 10;
-// let y = 3;
+// If hour is between 6am and 12pm: Good morning!
+// If it is between 12pm and 6pm: Good afternoon!
+// Otherwise: Good evening!
 
-// console.log(x - y);
-// console.log(x + y);
-// console.log(x * y);
-// console.log(x / y);
-// console.log(x % y);
-// console.log(x ** y);
+let hour = 20;
 
-// // Increment (++)
-// console.log(x++);
-// console.log(x);
+if (hour >= 6 && hour < 12 ) 
+  console.log('Good morning!');
 
-// // Decrement (--)
-// console.log(x--);
-// console.log(x);
+else if (hour >= 12 && hour < 18 ) 
+  console.log('Good afternoon!');
+
+else  
+  console.log('Good evening!');
 
 
-// 03 Assignment Operators
+// // 02 switch...case
 
-// let x = 10;
+let role = 'moderator';
 
-// x = x + 5;
-// x += 5; // The same
+switch (role) {
+  case 'guest':
+    console.log('Guest User');
+    break;
 
-// x = x * 3;
-// x *= 3; // The same
-
-
-// 04 Comparison Operators
-
-// let x = 1;
-
-// Relational
-// console.log(x > 0); // Greater than
-// console.log(x >= 1); // Greater or equal to than
-// console.log(x < 1); // Greater than
-// console.log(x <= 1); // Greater or equal to than
-
-// Equality
-// console.log(x === 1); // Equal to one
-// console.log(x !== 1); // NOT Equal to one
+    case 'moderator':
+      console.log('Moderator User');
+      break;
+    
+    default:
+    console.log('Unknown User');
+}
+// or use
+if (role ===  'guest') console.log('Guest');
+else if (role ===  'moderator') console.log('Moderator');
+else console.log('Unknown User');
 
 
-// 05 Equality Operators
+// 03 For (Loop)
 
-// console.log(1 === 1); // Strict (same type and value)
-// console.log('1' === 1); // Strict
+for (let i = 0; i <= 5; i++){ // i = indext
+  // console.log('Hello World', i);
+  if (i % 2 !== 0) console.log(i);
+}
 
-// console.log(1 == 1); // Loose
-// console.log('1' == 1); // Loose
-// console.log(true == 1); // Loose
+// 04 While (Loop)
+// let i = 0;
+// while (i <= 5){
+//   if (i % 2 !== 0) console.log(i);
+//   i++
+// }
 
+// 04 Do-While (Loop)
+let i = 0;
+do {
+  if (i % 2 !== 0) console.log(i);
+  i++
+} while (i <= 5);
 
-// 06 Ternary (conditional) Operators
-// if a customer has more than a hundred point, they area gold customer, otherwise silver.
-// let points = 101;
-// let type = points > 100 ? 'gold' : 'silver';
+// 05 Infinate Loops
 
-// console.log(type);
+// 06 for...in (Loop)
+const person = {
+  name: 'Mosh',
+  age: 30
+};
 
+for (let key in person)
+  console.log(key, person[key]);
 
-// 07 Logical Operators
-// Logical AND (&&), Returns TRUE if both operands are TRUE.
-// Logical OR (||), Returns TRUE if one of the operands is TRUE.
+const colors = ['red', 'green', 'blue'];
+// for (let index in colors)
+//   console.log(index, colors[index]);
 
-// let highIncome = false;
-// let goodCreditScore = false;
-// let eligibleForLoan = highIncome || goodCreditScore;
-// console.log('Eligable', eligibleForLoan);
-
-// // Not Operator(!)
-// let applicationRefused = !eligibleForLoan;
-// console.log('Application Refused', applicationRefused);
-
-
-// 08 Logical Operators with non Booleans
+// 07 for...of (Loop)
+for (let color in colors)
+  console.log(color);
